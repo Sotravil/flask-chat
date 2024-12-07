@@ -1,0 +1,103 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000; /* Dark mode background */
+    color: #fff; /* Default text color for dark mode */
+}
+
+/* Containers Styling */
+#login-container, #register-container {
+    background: #111; /* Dark gray for container background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 255, 0, 0.5); /* Green glow */
+    border: 1px solid #0f0; /* Green border */
+    transition: all 0.3s ease;
+}
+
+.form-container {
+    width: 300px;
+    text-align: center;
+}
+
+/* Input and Button Styling */
+input, button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input {
+    background-color: #222; /* Dark input background */
+    color: #fff; /* White text for inputs */
+    border: 1px solid #0f0; /* Green border */
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #ff0; /* Yellow border on focus */
+    box-shadow: 0 0 5px rgba(255, 255, 0, 0.8);
+}
+
+button {
+    background: #ff0; /* Yellow button background */
+    color: #000; /* Black text on buttons */
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #f00; /* Red background on hover */
+    color: #fff; /* White text on hover */
+}
+
+/* Links Styling */
+a {
+    color: #0f0; /* Green links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ff0; /* Yellow on hover */
+}
+
+/* Error and Message Styling */
+#error-message, #register-message, #login-message {
+    color: #f00; /* Red for error and messages */
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Add Decorative Canvas */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Background canvas */
+    background: #000; /* Match body background */
+}
+
+/* Animations and Hover Effects */
+button:hover {
+    transform: scale(1.05);
+}
+
+input:hover {
+    background-color: #333; /* Slightly lighter on hover */
+}
+
+#login-container:hover, #register-container:hover {
+    box-shadow: 0 6px 15px rgba(0, 255, 0, 0.7); /* Stronger glow on hover */
+}

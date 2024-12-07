@@ -1,0 +1,464 @@
+/* Global Styles */
+body {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #ff0000; /* Neon red */
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff5555, 0 0 30px #ff0000;
+}
+
+/* App Container */
+#app {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background: linear-gradient(145deg, #111, #222); /* Subtle gradient */
+    border: 2px solid #ff0000; /* Red outline */
+    border-radius: 15px;
+    box-shadow: 0 0 20px #ff0000, 0 0 30px #ff5555;
+}
+
+/* Chat Feed */
+#feed {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    background-color: #111; /* Dark background for feed */
+    box-shadow: 0 0 15px #ff0000, 0 0 25px #ff5555;
+}
+
+/* Chat Messages */
+.chat-message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ff0000;
+    border-radius: 10px;
+    background-color: #222; /* Slightly lighter dark */
+    color: #fff;
+    box-shadow: 0 0 10px #ff0000, 0 0 15px #ff5555;
+}
+
+.chat-message p {
+    margin: 5px 0;
+}
+
+/* Buttons */
+button {
+    background-color: #111; /* Dark button background */
+    border: 2px solid #ff0000;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff5555;
+    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff5555;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    box-shadow: 0 0 20px #ff0000, 0 0 30px #ff5555;
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px #ff0000, 0 0 15px #ff5555;
+}
+
+/* Inputs */
+input {
+    background-color: #111; /* Dark input background */
+    border: 2px solid #ff0000;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px;
+    width: 99%;
+    font-size: 14px;
+    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff5555;
+    margin-bottom: 10px;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 20px #ff0000, 0 0 30px #ff5555;
+}
+
+/* Comments Section */
+.comments {
+    margin-top: 10px;
+    padding: 10px;
+    border-top: 1px solid #ff0000;
+    color: #bbb; /* Slightly dimmed text */
+}
+
+.comments p {
+    font-size: 12px;
+}
+
+/* Scrollbar Styling */
+#feed::-webkit-scrollbar {
+    width: 8px;
+}
+
+#feed::-webkit-scrollbar-thumb {
+    background: #ff0000;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ff5555;
+}
+
+#feed::-webkit-scrollbar-track {
+    background: #111;
+}
+
+/* Neon Glow Decorations */
+.neon-decoration {
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #ff0000, #ff5555, #ff0000);
+    box-shadow: 0 0 15px #ff0000, 0 0 30px #ff5555;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* Dashboard Layout */
+#dashboard {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+#sidebar {
+    width: 20%;
+    background: #111;
+    border-right: 2px solid #ff0000;
+    padding: 20px;
+    box-shadow: 0 0 15px #ff0000, 0 0 25px #ff5555;
+}
+
+#sidebar h2 {
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff5555;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    margin: 10px 0;
+}
+
+#sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    text-align: center;
+    background: #222;
+    transition: all 0.3s;
+    box-shadow: 0 0 10px #ff0000, 0 0 15px #ff5555;
+}
+
+#sidebar ul li a:hover {
+    background: #ff0000;
+    color: #fff;
+    box-shadow: 0 0 20px #ff0000, 0 0 30px #ff5555;
+}
+
+/* Main Content */
+#main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: linear-gradient(145deg, #111, #222);
+}
+
+.dashboard-section {
+    display: none;
+}
+
+.dashboard-section:target {
+    display: block;
+}
+
+/* Profile Section */
+#profile-info {
+    background: #222;
+    padding: 15px;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #ff0000, 0 0 25px #ff5555;
+}
+
+#profile-info p {
+    margin: 10px 0;
+}
+
+#about-info {
+    background: #222;
+    padding: 15px;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #ff0000, 0 0 25px #ff5555;
+}
+
+#about-info p {
+    margin: 10px 0;
+}
+
+#billing-info {
+    background: #222;
+    padding: 15px;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #ff0000, 0 0 25px #ff5555;
+}
+
+#billing-info p {
+    margin: 10px 0;
+}
+
+#logout {
+    margin-top: 20px;
+    display: block;
+    background: #111;
+    border: 2px solid #ff0000;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff5555;
+    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff5555;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#logout:hover {
+    box-shadow: 0 0 20px #ff0000, 0 0 30px #ff5555;
+    transform: scale(1.1);
+}
+
+/* Highlight the active menu link */
+.menu-link.active {
+    background: #ff0000;
+    color: #fff;
+    box-shadow: 0 0 20px #ff0000, 0 0 30px #ff5555;
+}
+
+/* Dashboard sections */
+.dashboard-section {
+    display: none;
+}
+
+.dashboard-section.active {
+    display: block;
+}
+
+.avatar:hover {
+    box-shadow: 0 0 20px #fff, 0 0 30px #aaaaaa; /* Brighter glow on hover */
+    transform: scale(1.1); /* Slight enlargement on hover */
+}
+
+.avatar:active {
+    transform: scale(0.95); /* Slight shrink on click */
+    box-shadow: 0 0 10px #fff, 0 0 15px #aaaaaa; /* Reduced glow on click */
+}
+
+.menu-link {
+    text-decoration: none;
+    color: #000;
+    box-shadow: 0 0 5px #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.menu-link:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #aaa;
+}
+    .menu-link:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 5px #555;
+}
+
+#profile.dashboard-section {
+    color: #e4e4e4;
+}
+
+#profile.dashboard-section p, 
+#profile.dashboard-section ul li, 
+#profile.dashboard-section span {
+    transition: color 0.2s, transform 0.2s;
+    transform-origin: left;
+}
+
+#profile.dashboard-section p:hover, 
+#profile.dashboard-section ul li:hover, 
+#profile.dashboard-section span:hover {
+    color: #ff0000;
+    transform: scale(1.1);
+}
+
+#profile.dashboard-section p:active, 
+#profile.dashboard-section ul li:active, 
+#profile.dashboard-section span:active {
+    color: #555;
+    transform: scale(0.95);
+}
+
+#sub.dashboard-section {
+    color: #e4e4e4;
+}
+
+#sub.dashboard-section p, 
+#sub.dashboard-section ul li, 
+#sub.dashboard-section span {
+    transition: color 0.2s, transform 0.2s;
+    transform-origin: left;
+}
+
+#sub.dashboard-section p:hover, 
+#sub.dashboard-section ul li:hover, 
+#sub.dashboard-section span:hover {
+    color: #ff0000;
+    transform: scale(1.1);
+}
+
+#sub.dashboard-section p:active,
+#sub.dashboard-section ul li:active,
+#sub.dashboard-section span:active {
+    color: #555;
+    transform: scale(0.95);
+}
+
+
+/* General Settings Styles */
+.settings-section {
+    border-top: 1px solid #ff0000; /* Separation between rows */
+    padding: 10px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.settings-section summary {
+    list-style: none; /* Remove default marker */
+    cursor: pointer;
+    color: #ff0000; /* Neon red */
+    font-weight: bold;
+    padding: 5px;
+    transition: transform 0.2s, color 0.2s;
+    transform-origin: left; /* Animates from the left */
+}
+
+.settings-section summary:hover {
+    transform: scale(1.1);
+    color: #ff5555; /* Brighter color on hover */
+}
+
+.settings-section summary:active {
+    transform: scale(0.95);
+    color: #555; /* Dims text color on click */
+}
+
+.settings-section ul {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.settings-section ul li {
+    transition: color 0.2s, transform 0.2s;
+    transform-origin: left;
+}
+
+.settings-section ul li:hover {
+    color: #ff0000;
+    transform: scale(1.1);
+}
+
+.settings-section ul li:active {
+    color: #555;
+    transform: scale(0.95);
+}
+
+/* Settings Info Description */
+#settings-info p {
+    margin: 10px 0;
+    color: #e4e4e4;
+    transition: color 0.2s, transform 0.2s;
+}
+
+#settings-info p:hover {
+    transform: scale(1.05);
+    color: #ff5555;
+}
+
+#settings-info p:active {
+    color: #555;
+    transform: scale(0.95);
+}
+
+/* Details Element Default Behavior */
+.settings-section[open] summary {
+    color: #ff5555; /* Changes color when open */
+}
+
+#settings.dashboard-section {
+    color: #0d5628;
+}
+
+#settings.dashboard-section p, 
+#settings.dashboard-section ul li, 
+#settings.dashboard-section span {
+    transition: color 0.2s, transform 0.2s;
+    transform-origin: left;
+}
+
+#settings.dashboard-section p:hover, 
+#settings.dashboard-section ul li:hover, 
+#settings.dashboard-section span:hover {
+    color: #ff0000;
+    transform: scale(1.1);
+}
+
+#settings.dashboard-section p:active,
+#settings.dashboard-section ul li:active,
+#settings.dashboard-section span:active {
+    color: #555;
+    transform: scale(0.95);
+}
+
+.chat-output {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    background-color: #111;
+    box-shadow: 0 0 15px #ff0000, 0 0 25px #ff5555;
+    margin-top: 10px;
+}
+
+.message-row {
+    padding: 5px;
+    border-bottom: 1px solid #ff0000;
+    color: #fff;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.message-row:hover {
+    background-color: #222;
+}

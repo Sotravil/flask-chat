@@ -10,13 +10,16 @@ PORT = 3891
 USER_DATA_PATH = 'users.json'
 CHAT_DATA_DIR = 'chats'
 
+# Ensure directories and files exist
 if not os.path.exists(CHAT_DATA_DIR):
     os.makedirs(CHAT_DATA_DIR)
 
+if not os.path.exists(USER_DATA_PATH):
+    with open(USER_DATA_PATH, 'w') as file:
+        json.dump({}, file)
+
 # Helper Functions
 def load_users():
-    if not os.path.exists(USER_DATA_PATH):
-        return {}
     with open(USER_DATA_PATH, 'r') as file:
         return json.load(file)
 
@@ -25,14 +28,14 @@ def save_users(users):
         json.dump(users, file)
 
 def load_chat_data(user1, user2):
-    filename = f"{CHAT_DATA_DIR}/{sorted([user1, user2])}.json"
+    filename = f"{CHAT_DATA_DIR}/{user1}_{user2}.json" if user1 < user2 else f"{CHAT_DATA_DIR}/{user2}_{user1}.json"
     if not os.path.exists(filename):
         return []
     with open(filename, 'r') as file:
         return json.load(file)
 
 def save_chat_data(user1, user2, messages):
-    filename = f"{CHAT_DATA_DIR}/{sorted([user1, user2])}.json"
+    filename = f"{CHAT_DATA_DIR}/{user1}_{user2}.json" if user1 < user2 else f"{CHAT_DATA_DIR}/{user2}_{user1}.json"
     with open(filename, 'w') as file:
         json.dump(messages, file)
 
@@ -98,7 +101,10 @@ def get_chats():
         return jsonify({'status': 'error', 'message': 'Not logged in'})
 
     chat_files = os.listdir(CHAT_DATA_DIR)
-    chats = [chat.replace('.json', '').replace(f"{username}_", '').replace(f"_{username}", '') for chat in chat_files if username in chat]
+    chats = [
+        chat.replace('.json', '').replace(f"{username}_", '').replace(f"_{username}", '')
+        for chat in chat_files if username in chat
+    ]
     app.logger.info(f"Chats retrieved successfully for user '{username}'.")
     return jsonify({'status': 'success', 'chats': chats})
 
